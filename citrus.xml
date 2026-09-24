@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- RisingOS 16 (sixteen-qpr2) local manifest for POCO M3 (citrus)
-     Unified chime tree: supports citrus (POCO M3) + lime (Redmi 9T) via SKU libinit -->
+     Unified chime tree: supports citrus (POCO M3) + lime (Redmi 9T) via SKU libinit
+     NOTE: remote is named citrus-gh because RisingOS default.xml already
+     defines a remote called "github" (fetch="..") - redefining it is fatal. -->
 <manifest>
-  <remote name="github" fetch="https://github.com" />
+  <remote name="citrus-gh" fetch="https://github.com" />
 
   <!-- Device tree (repo named 'juice', contains device/xiaomi/chime) -->
-  <project path="device/xiaomi/chime" name="crdroidandroid/android_device_xiaomi_juice" remote="github" revision="16.0" clone-depth="1" />
+  <project path="device/xiaomi/chime" name="crdroidandroid/android_device_xiaomi_juice" remote="citrus-gh" revision="16.0" clone-depth="1" />
 
   <!-- Proprietary vendor blobs -->
-  <project path="vendor/xiaomi/chime" name="crdroidandroid/android_vendor_xiaomi_chime" remote="github" revision="16.0" clone-depth="1" />
+  <project path="vendor/xiaomi/chime" name="crdroidandroid/android_vendor_xiaomi_chime" remote="citrus-gh" revision="16.0" clone-depth="1" />
 
   <!-- Kernel (bengal-perf_defconfig + xiaomi/lime.config, citrus.config present) -->
-  <project path="kernel/xiaomi/chime" name="crdroidandroid/android_kernel_xiaomi_chime" remote="github" revision="16.0" clone-depth="1" />
+  <project path="kernel/xiaomi/chime" name="crdroidandroid/android_kernel_xiaomi_chime" remote="citrus-gh" revision="16.0" clone-depth="1" />
 
   <!-- Xiaomi hardware helpers -->
-  <project path="hardware/xiaomi" name="crdroidandroid/android_hardware_xiaomi" remote="github" revision="16.0" clone-depth="1" />
+  <project path="hardware/xiaomi" name="crdroidandroid/android_hardware_xiaomi" remote="citrus-gh" revision="16.0" clone-depth="1" />
 
   <!-- Dolby (required by device tree's crdroid.dependencies) -->
-  <project path="hardware/dolby" name="crdroidandroid/android_hardware_dolby" remote="github" revision="16.0-redwood" clone-depth="1" />
+  <project path="hardware/dolby" name="crdroidandroid/android_hardware_dolby" remote="citrus-gh" revision="16.0-redwood" clone-depth="1" />
 </manifest>
